@@ -63,7 +63,7 @@ const Join = () => {
               name="number"
               title="PROFILE NUMBER"
               onChange={onChangeHandler}
-              defaultValue={String(getCookie("myId"))}
+              defaultValue={window.localStorage.myId}
             />
             <Input
               name="password"
