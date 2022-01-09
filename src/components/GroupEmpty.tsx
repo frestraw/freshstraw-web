@@ -35,10 +35,10 @@ const GroupEmpty: FC<Props> = ({ groupId }) => {
               name=""
               readOnly
               onClick={() => {
-                copyToClibboard(`http://localhost:3000/group/${groupId}`);
+                copyToClibboard(`http://211.38.86.92:1080/group/${groupId}`);
                 alert("클립보드에 복사되었습니다.");
               }}
-              value={`http://localhost:3000/group/${groupId}`}
+              value={`http://211.38.86.92:1080/group/${groupId}`}
             ></Input>
           </div>
         </EmptyWrapper>

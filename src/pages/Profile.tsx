@@ -46,7 +46,7 @@ const Profile = () => {
           <div
             className="copy-button"
             onClick={() => {
-              copyToClibboard(`http://localhost:3000/profile/${userId}`);
+              copyToClibboard(`http://211.38.86.92:1080/profile/${userId}`);
               alert("클립보드에 복사되었습니다.");
             }}
           >
