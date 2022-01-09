@@ -103,6 +103,7 @@ const Create = () => {
       window.localStorage.setItem("myId", String(data.id));
     } catch (e: any) {
       alert(e.response.data.message);
+      setPage(0);
     }
   };
 
@@ -126,6 +127,7 @@ const Create = () => {
                 <label className="upload-button">
                   <input
                     type="file"
+                    accept="image/*"
                     onChange={(e) =>
                       e.target.files && setFile(e.target.files[0])
                     }

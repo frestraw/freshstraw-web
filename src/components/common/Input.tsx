@@ -12,7 +12,7 @@ const Input: FC<Props> = ({ title, readOnly, ...restProps }) => {
   return (
     <InputStyle>
       <div className="title">{title}</div>
-      <input readOnly={readOnly} type="text" {...restProps} />
+      <input maxLength={50} readOnly={readOnly} type="text" {...restProps} />
     </InputStyle>
   );
 };
