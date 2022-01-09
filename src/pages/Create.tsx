@@ -101,8 +101,8 @@ const Create = () => {
       });
       navigate(`/profile/${data.id}`);
       window.localStorage.setItem("myId", String(data.id));
-    } catch (e) {
-      alert(e);
+    } catch (e: any) {
+      alert(e.response.data.message);
     }
   };
 

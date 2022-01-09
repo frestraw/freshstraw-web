@@ -25,7 +25,7 @@ const Join = () => {
   const { groupId } = useParams();
   const naviagte = useNavigate();
   const [value, setValue] = useState({
-    number: "",
+    number: window.localStorage.myId,
     password: "",
   });
 
@@ -50,8 +50,8 @@ const Join = () => {
         groupId &&
         (await joinGroup(parseInt(number), parseInt(groupId)));
       number && groupId && naviagte(`/group/${groupId}`);
-    } catch (e) {
-      alert(e);
+    } catch (e: any) {
+      alert(e.response.data.message);
     }
   };
   return (
@@ -63,7 +63,7 @@ const Join = () => {
               name="number"
               title="PROFILE NUMBER"
               onChange={onChangeHandler}
-              defaultValue={window.localStorage.myId}
+              value={number}
             />
             <Input
               name="password"

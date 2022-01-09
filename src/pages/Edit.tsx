@@ -128,8 +128,8 @@ const Edit = () => {
           ],
         }));
       navigate(`/profile/${cardId}`);
-    } catch (e) {
-      alert(e);
+    } catch (e: any) {
+      alert(e.response.data.message);
     }
   };
 
