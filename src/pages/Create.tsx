@@ -14,6 +14,7 @@ const Create = () => {
   const navigate = useNavigate();
   const [page, setPage] = useState<number>(0);
   const [file, setFile] = useState<File>();
+  const [loading, setLoading] = useState<boolean>(false);
   const [value, setValue] = useState({
     name: "",
     gender: "",
@@ -67,6 +68,7 @@ const Create = () => {
     formData.set("password", password);
     file && formData.append("image", file);
     try {
+      setLoading(true);
       const { data } = await createCard(formData);
       await editCard(data.id, {
         name: name,
@@ -111,6 +113,7 @@ const Create = () => {
       alert(e.response.data.message);
       setPage(0);
     }
+    setLoading(false);
   };
 
   return (
@@ -271,7 +274,7 @@ const Create = () => {
         <div className="bottomButton">
           <Button
             onClick={() => (page === 1 ? onSubmit() : setPage(1))}
-            disabled={!(isFullField || false)}
+            disabled={loading ? true : !(isFullField || false)}
           >
             {page === 0 ? "다음 내용을 입력하기" : "프로필 작성 마치기"}
           </Button>
