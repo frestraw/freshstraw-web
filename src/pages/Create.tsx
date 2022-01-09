@@ -45,7 +45,6 @@ const Create = () => {
   } = value;
 
   const isFullField =
-    file &&
     name &&
     gender &&
     job &&
