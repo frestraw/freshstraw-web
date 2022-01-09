@@ -15,6 +15,7 @@ const enToKR = {
   likeFood: "좋아하는 음식",
   birthDate: "생년월일",
   github: "깃허브",
+  linkedIn: "링크드인",
 };
 const UserProfile: FC<Props> = ({ userId }) => {
   const [data, setData] = useState<GetCardResponse>();

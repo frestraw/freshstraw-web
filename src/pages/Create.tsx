@@ -27,6 +27,7 @@ const Create = () => {
     bio: "",
     mbti: "",
     likeSeason: "",
+    linkedIn: "",
   });
 
   const {
@@ -42,6 +43,7 @@ const Create = () => {
     github,
     likeFood,
     likeSeason,
+    linkedIn,
   } = value;
 
   const isFullField =
@@ -96,6 +98,10 @@ const Create = () => {
           {
             itemId: 7,
             value: github,
+          },
+          {
+            itemId: 8,
+            value: linkedIn,
           },
         ],
       });
@@ -193,18 +199,28 @@ const Create = () => {
                 title="한 줄 소개"
                 value={bio}
                 name="bio"
+                placeholder="간단한 한 줄 소개를 입력해주세요."
                 onChange={onChangeHandler}
               />
               <Input
                 title="생년월일"
                 value={birthDate}
                 name="birthDate"
+                placeholder="ex) 2004.08.08"
                 onChange={onChangeHandler}
               />
               <Input
                 value={github}
                 title="깃허브"
                 name="github"
+                placeholder="깃허브 아이디를 입력해주세요. ex) eungyeole"
+                onChange={onChangeHandler}
+              />
+              <Input
+                title="링크드인"
+                name="linkedIn"
+                placeholder="ex) https://www.linkedin.com/in/eungyeole/"
+                value={linkedIn}
                 onChange={onChangeHandler}
               />
               <DropDown
