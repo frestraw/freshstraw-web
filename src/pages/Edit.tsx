@@ -130,6 +130,7 @@ const Edit = () => {
       navigate(`/profile/${cardId}`);
     } catch (e: any) {
       alert(e.response.data.message);
+      setPage(0);
     }
   };
 
@@ -137,8 +138,21 @@ const Edit = () => {
     <MobileTemplate>
       <CreateStyle>
         <div className="title">
-          편리한 정보 공유를 위해
-          <br /> 꼭 입력해주세요!
+          {page === 0 ? (
+            <>
+              편리한 정보 공유를 위해
+              <br /> 꼭 입력해주세요!
+            </>
+          ) : (
+            <>
+              공유하고 싶은 정보를
+              <br /> 자유롭게 입력해주세요!
+              <div className="description">
+                공유를 원하지 않는 정보는 비워두거나
+                <br /> 항목을 삭제하시면 돼요!
+              </div>
+            </>
+          )}
         </div>
         <div className="content">
           {page === 0 ? (
@@ -300,7 +314,7 @@ const CreateStyle = styled.div`
       }
       & > .description {
         color: ${colors.description};
-        font-weight: 40;
+        font-weight: 400;
         font-size: 12px;
       }
     }
@@ -324,6 +338,12 @@ const CreateStyle = styled.div`
     font-weight: 700;
     font-size: 20px;
     padding: 32px 28px;
+    & .description {
+      color: ${colors.description};
+      font-weight: 400;
+      font-size: 12px;
+      margin-top: 8px;
+    }
   }
   & .content {
     padding: 0 28px;
