@@ -184,6 +184,7 @@ const Edit = () => {
               <Input
                 value={name}
                 title="이름"
+                placeholder="이름을 입력해주세요."
                 name="name"
                 onChange={onChangeHandler}
               />
@@ -198,23 +199,27 @@ const Edit = () => {
               <Input
                 value={job}
                 title="직업"
+                placeholder="직업을 입력해주세요. ex) Frontend Engineer"
                 name="job"
                 onChange={onChangeHandler}
               />
               <Input
                 value={email}
                 title="이메일"
+                placeholder="이메일을 입력해주세요."
                 name="email"
                 onChange={onChangeHandler}
               />
               <Input
                 title="비밀번호"
+                placeholder="비밀번호를 입력해주세요."
                 value={password}
                 name="password"
                 onChange={onChangeHandler}
               ></Input>
               <Input
                 title="비밀번호 확인"
+                placeholder="비밀번호를 확인해주세요."
                 value={passwordConfirm}
                 name="passwordConfirm"
                 onChange={onChangeHandler}
