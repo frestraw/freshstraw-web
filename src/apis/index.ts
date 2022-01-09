@@ -79,7 +79,7 @@ export const getGroup = (groupId: number) =>
   request.get<GetGroupResponse>(`/groups/${groupId}`);
 export const getCard = (userId: number) =>
   request.get<GetCardResponse>(
-    `/cards/${userId}${getCookie("myId") && `?myId=${getCookie("myId")}`}`
+    `/cards/${userId}${getCookie("myId") ? `?myId=${getCookie("myId")}` : ""}`
   );
 
 export const joinGroup = (cardId: number, groupId: number) =>
