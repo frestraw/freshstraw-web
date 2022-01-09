@@ -100,7 +100,7 @@ const Create = () => {
         ],
       });
       navigate(`/profile/${data.id}`);
-      document.cookie = `myId=${data.id}; secure; SameSite=none`;
+      window.localStorage.setItem("myId", String(data.id));
     } catch (e) {
       alert(e);
     }
